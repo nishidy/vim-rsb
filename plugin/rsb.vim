@@ -8,6 +8,9 @@ function! Run_rsb()
     let @a = system("/usr/local/bin/rsb ".expand("%")." ".line(".")." . ".number." --vim")
     new 
     normal "ap 
+	" Delete the first line
+	normal gg
+	normal dd
     w! /tmp/result.vimrsb
 endfunction
  
@@ -26,5 +29,4 @@ function! Open_rsb()
         exe "normal ".linenum."gg"
     endif
 endfunction
-noremap <silent> <Leader>rsb :call Run_rsb()<CR>
 
