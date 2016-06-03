@@ -14,7 +14,7 @@ function! Run_rsb()
     w! /tmp/result.vimrsb
 endfunction
  
-noremap <silent> <ENTER> :call Open_rsb()<CR>
+au FileType vimrsb noremap <ENTER> :call Open_rsb()<CR>
  
 function! Open_rsb()
     if expand("%:e") == "vimrsb"
